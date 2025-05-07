@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>受限访问的 Chatbot</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      font-family: sans-serif;
+    }
+    .hidden { display: none; }
+    .centered {
+      display: flex; align-items: center; justify-content: center;
+      height: 100vh; flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div id="password-page" class="centered">
+    <h2>请输入访问密码</h2>
+    <input type="password" id="pwd" placeholder="请输入密码">
+    <button onclick="checkPassword()">进入</button>
+    <p id="msg" style="color: red;"></p>
+  </div>
+
+  <script>
+    const correctPassword = "123456"; // 设置你自己的密码
+    function checkPassword() {
+      const input = document.getElementById("pwd").value;
+      if (input === correctPassword) {
+        // 验证成功后，直接跳转到 chatbot 页面
+        window.location.href = "https://76cb-116-234-46-21.ngrok-free.app/chatbot/d38qp6QipDKxfDS4";
+      } else {
+        document.getElementById("msg").innerText = "密码错误";
+      }
+    }
+  </script>
+</body>
+</html>
